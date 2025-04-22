@@ -1,54 +1,53 @@
-# React + TypeScript + Vite
+IELTS Speaking Test Platform - Assignment 7
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+📝 Overview
+This repository contains implementation of Assignment 7 for the IELTS Speaking Test Platform, focusing on routing implementation with both public and private routes. The application is built using React, TypeScript, and React Router DOM.
 
-Currently, two official plugins are available:
+🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Public Routes: Home page and Login page accessible to all users
+Private Routes: Admin and Test Taker dashboards accessible only to authenticated users
+Authentication System: Simple authentication implementation using localStorage
+Responsive Design: Works well on different screen sizes
 
-## Expanding the ESLint configuration
+🛠️ Technologies Used
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+React 18
+TypeScript
+React Router DOM
+Vite (for build tooling)
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+📦 Installation
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Clone the repository
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+bashgit clone https://github.com/aseervad/assignment7.git
+cd assignment7
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+Install dependencies
+
+bashnpm install
+
+Run the development server
+
+bashnpm run dev
+
+Open your browser and navigate to http://localhost:5173
+
+🔍 Implementation Details
+Components Created:
+
+Home: Landing page for the application
+Login: Authentication page
+AdminDashboard: Dashboard for administrators
+TestTakerDashboard: Dashboard for test takers
+PrivateRoute: HOC to protect routes requiring authentication
+Header: Navigation component
+Footer: Footer component
+
+Routing Structure:
+/                     - Home page (public)
+/login                - Login page (public)
+/admin-dashboard      - Admin dashboard (private)
+/test-taker-dashboard - Test taker dashboard (private)
+
